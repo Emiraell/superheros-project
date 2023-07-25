@@ -12,6 +12,8 @@ document.getElementById('randomHero')
 const apiUrl = 'https://superheroapi.com/api.php'
 const myAccessToken = '2480652435442335'
 const heroImgStat = document.getElementById('heroImgStats')
+const powerstatDiv = document.querySelector('.js-heroInfo')
+const heroNameLm = document.getElementById('heroName')
 
 
 async function getRandomHero () {
@@ -40,17 +42,19 @@ try {
    
     const heroImage = data.image.url
     let powerStatHtml = ''
-    console.log(data.name)
-    console.log(Object.keys(data.powerstats))
+    //let heroNamee = data.name
+   // console.log(Object.keys(data.powerstats))
     
     Object.keys(data.powerstats).forEach ((stat) => {
       
       powerStatHtml += `<p> ${powerstatsEmoji[stat]} ${stat} : ${data.powerstats[stat]}</p>`
-      console.log(powerStatHtml)
+      //console.log(powerStatHtml)
     });
-    heroImgStat.innerHTML = `
-      <img src = "${heroImage}" height = 200 width= 200>
-`
+    heroNameLm.innerHTML = data.name
+    heroImgStat.innerHTML = `<img src = "${heroImage}" height = 200 width= 200>`
+    powerstatDiv.innerHTML = powerStatHtml
+    
+    
     }
   catch {
     console.log ('error')
