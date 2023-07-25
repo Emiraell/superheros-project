@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pratice api</title>
+</head>
+<body>
+  
+  <script>
+    const apiUrl = 'https://superheroapi.com/api.php'
+    const myAccessToken = '2480652435442335'
+    
+    async function randomHero () {
+
+      const heroId = Math.ceil(Math.random() * 731)
+      console.log (heroId)
+        try {
+        let res = await fetch (`${apiUrl}/${myAccessToken}/${heroId}`)
+        //console.log(res)
+        const data = await res.json()
+        console.log(data)
+        }
+        catch {
+          console.log('error')
+        }
+        finally {
+          console.log ('end of code')
+        }
+    }
+      randomHero ()
+  </script>
+</body>
+</html>
