@@ -13,6 +13,9 @@ body {
   font-size: 15px;
   padding: 3%;
 }
+h2 {
+  margin: 19px;
+}
 input {
   width: 50%;
   border: 1px solid transparent;
@@ -58,7 +61,7 @@ h3 {
   color: rgb(183, 154, 10);
 }
 .heroName {
-  margin-bottom: 30px
+  margin-bottom: 20px;
 }
 img {
   width: 250px;
