@@ -8,6 +8,13 @@ document.getElementById('randomHero')
   getRandomHero ();
 });
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    searchHero ();
+  }
+});
+
+// variabe declarations
 const apiUrl = 'https://superheroapi.com/api.php';
 const myAccessToken = '2480652435442335';
 const heroDiv = document.getElementById('heroDiv');
@@ -21,6 +28,7 @@ let powerstatsEmoji = {
   combat: '⚔️'
 };
 
+//to get heros at random without any infos
  async function getRandomHero () {
 
   const randomHero = Math.random() * 731;
@@ -35,6 +43,7 @@ try {
    superHeroRender (superHero); 
   }
   catch {
+    //message to render in case of code error
     heroDiv.innerHTML = `
     <p style = "color: white;">
       <strong>Error</strong>: <i> couldn't fetch hero</i>
@@ -45,12 +54,14 @@ try {
   } 
 };
 
+//to dispaly the heros on the webpage or application
 const superHeroRender = (hero) => {
   
   const heroImage = hero.image.url;
   let powerStatHtml = '';
   let profileHtml = '';
   
+  // fetct datas from the api to use for hero profile
   let heroProfile = {
     ['full-name']: hero.biography['full-name'],
     gender: hero.appearance.gender,
@@ -61,6 +72,7 @@ const superHeroRender = (hero) => {
     weight: hero.appearance.weight[1]
   };
 
+  //convert from object to array/list for easy looping
   Object.keys(heroProfile).forEach ((profile) => {
     profileHtml += `
     <p>
@@ -80,6 +92,7 @@ const superHeroRender = (hero) => {
       </p>`;
   });
   
+  //generate html elements for each data to be rendered on the page
   heroDiv.innerHTML = `
   <h2 id="heroName" class="heroName">${hero.name}</h2>
   <div class="profileDiv" >
@@ -95,6 +108,7 @@ const superHeroRender = (hero) => {
   </div>`;
 };
 
+// manually for a superhero using the name
 async function searchHero () {
   
   const heroSearch = document.querySelector('.js-heroInput');
