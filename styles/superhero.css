@@ -8,8 +8,8 @@ main {
 }
 
 body {
-  background-color: rgb(1, 16, 16);
-  color: white;
+  background-color: #050112;
+  color: #ffffff;
   max-width: 600px;
   font-family: arial;
   font-size: 15px;
@@ -33,17 +33,17 @@ input {
   margin-left: -78px;
   width: 70px;
   padding: 5px;
-  background-color: rgb(133, 129, 129);
+  background-color: #797070;
 }
 
-input, .searchBtn, img {
+input, .searchBtn, img, .randomHero {
   border-radius: 20px;
 }
 
 .randomHero {
-  border-radius: 15px;
   margin-left: 10px;
-  background-color: rgb(91, 94, 3);
+  background-color: #717003;
+  color: #d8c6c6;
 }
 
 .inputDiv, .heroName {
@@ -67,11 +67,11 @@ input, .searchBtn, img {
 }
 
 h3 {
-  color: rgb(183, 154, 10);
+  color: #8d6b05;
 }
 
 img {
   width: 250px;
   height: 250px;
-  border: 5px solid rgb(23, 2, 44);
+  border: 5px solid #2a033e;
 }
