@@ -8,10 +8,10 @@ main {
 }
 
 body {
-  background-color: #050112;
+  background-color: #070511;
   color: #ffffff;
   max-width: 600px;
-  font-family: arial;
+  font-family: 'Lato', arial;
   font-size: 15px;
   padding: 3%;
 }
@@ -58,7 +58,7 @@ input, .searchBtn, img, .randomHero {
 .profileDiv {
   display: grid;
   grid-template-columns: 0.8fr 1fr;
-  column-gap: 20px;
+  column-gap: 30px;
   padding-bottom: 20px;
 }
 
@@ -67,11 +67,12 @@ input, .searchBtn, img, .randomHero {
 }
 
 h3 {
-  color: #8d6b05;
+  color: #ecc759;
+  padding-left: 10px;
 }
 
 img {
-  width: 250px;
-  height: 250px;
+  width: 257px;
+  height: 270px;
   border: 5px solid #2a033e;
 }

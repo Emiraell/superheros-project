@@ -100,10 +100,12 @@ const superHeroRender = (hero) => {
       <img src = "${heroImage}">
     </div>
     <div id="heroProfile" class="js-heroProfile heroProfile">
+      <h3> PROFILE </h3>
       ${profileHtml}
     </div>
   </div>
   <div id="heroInfo" class="heroInfo js-heroInfo">
+  <h3> ATTRIBUTES </h3>
     ${powerStatHtml}
   </div>`;
 };
@@ -124,7 +126,8 @@ async function searchHero () {
   catch {
     heroDiv.innerHTML = `
     <p style = "color: white;">
-      <strong> Name error </strong>: <i>No hero with the above name</i>
+      <strong> Name error </strong>: 
+      <i>No hero with the above name, please check spelling</i>
     </p>`;
     setTimeout (() => {
       heroDiv.innerHTML = '';
