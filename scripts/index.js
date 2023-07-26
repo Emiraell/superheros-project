@@ -44,8 +44,6 @@ try {
   } 
 }
 
-
-
 const superHeroRender = (hero) => {
   
   const heroImage = hero.image.url;
@@ -53,7 +51,7 @@ const superHeroRender = (hero) => {
   let profileHtml = '';
   
   heroNameLm.innerHTML = hero.name;
-  heroImgStat.innerHTML = `<img src = "${heroImage}" height = 300 width= 250>`
+  heroImgStat.innerHTML = `<img src = "${heroImage}">`
   
   let heroProfile = {
     ['full-name']: hero.biography['full-name'],
@@ -66,17 +64,21 @@ const superHeroRender = (hero) => {
   };
 
   Object.keys(heroProfile).forEach ((profile) => {
-    profileHtml += `<p> ${profile.toLocaleUpperCase()} : ${heroProfile[profile]}</p>`
-    heroProfileDiv.innerHTML = profileHtml
+    profileHtml += `<p> <strong>${profile.toLocaleUpperCase()}</strong> : ${heroProfile[profile]}</p>`
+    heroProfileDiv.innerHTML = `
+      <h3> HERO PROFILE </h3>
+      ${profileHtml}`
   });
   
   Object.keys(hero.powerstats).forEach ((stat) => {
     
     powerStatHtml += `
-      <p> ${powerstatsEmoji[stat]} ${stat.toLocaleUpperCase()} : ${hero.powerstats[stat]}</p>`;
-      powerstatDiv.innerHTML = powerStatHtml
+      <p> ${powerstatsEmoji[stat]} <strong>${stat.toLocaleUpperCase()}</strong> : ${hero.powerstats[stat]}</p>`;
+      powerstatDiv.innerHTML = `
+        <h3> HERO ABILITIES </h4>
+        ${powerStatHtml}`
   });
- 
+  
 }
 
 
@@ -96,4 +98,5 @@ async function searchHero () {
   catch {
     console.log ('error')
   }
+  
 }
