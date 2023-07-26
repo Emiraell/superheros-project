@@ -2,9 +2,11 @@
   padding: 0;
   margin: 0;
 }
+
 main {
   margin: 15px;
 }
+
 body {
   background-color: rgb(1, 16, 16);
   color: white;
@@ -13,46 +15,53 @@ body {
   font-size: 15px;
   padding: 3%;
 }
+
 h2 {
   margin: 19px;
 }
+
 input {
   width: 50%;
+}
+
+.searchBtn, input, .randomHero {
   border: 1px solid transparent;
-  border-radius: 20px;
   padding: 10px;
 }
+
 .searchBtn {
   margin-left: -78px;
-  border-radius: 20px;
-  border: 1px solid transparent;
   width: 70px;
   padding: 5px;
   background-color: rgb(133, 129, 129);
-  color: white;
+}
+
+input, .searchBtn, img {
+  border-radius: 20px;
 }
 
 .randomHero {
-  padding: 10px;
   border-radius: 15px;
-  border: 1px solid transparent;
   margin-left: 10px;
   background-color: rgb(91, 94, 3);
-  color: rgb(255, 255, 255);
 }
-.inputDiv {
+
+.inputDiv, .heroName {
   margin-bottom: 20px;
 }
+
 .heroInfoDiv {
   display: flex;
   flex-direction: column;
 }
+
 .profileDiv {
   display: grid;
   grid-template-columns: 0.8fr 1fr;
   column-gap: 20px;
   padding-bottom: 20px;
 }
+
 .profileDiv p, .heroInfo p, h3 {
   margin-bottom: 13px;
 }
@@ -60,12 +69,9 @@ input {
 h3 {
   color: rgb(183, 154, 10);
 }
-.heroName {
-  margin-bottom: 20px;
-}
+
 img {
   width: 250px;
   height: 250px;
-  border-radius: 20px;
   border: 5px solid rgb(23, 2, 44);
 }
